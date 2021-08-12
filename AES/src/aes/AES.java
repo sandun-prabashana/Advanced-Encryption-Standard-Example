@@ -7,6 +7,7 @@ package aes;
 
 import com.sun.istack.internal.logging.Logger;
 import java.security.Key;
+import java.util.Scanner;
 import java.util.logging.Level;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -57,7 +58,9 @@ public class AES {
         
         try {
             AES aes = new AES("gtevdywoap12gryd");
-            String encdata = aes.encrypt("sandun");
+            Scanner my = new Scanner(System.in);
+            String secret = my.nextLine();
+            String encdata = aes.encrypt(secret);
             System.out.println("Encrypted Data - "+encdata);
             String decdata =  aes.decrypt(encdata);
             System.out.println("Decrypted Data - "+decdata);
